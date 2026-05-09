@@ -42,7 +42,13 @@ public class PoopShooter : MonoBehaviour
         //direction
         Vector2 dir = (new Vector2(player.position.x, player.position.y) -
                       new Vector2(transform.position.x, transform.position.y)).normalized;
+        
+        
         obj = Instantiate(Poops, transform.position, Quaternion.identity);
+        
+        
+        
+        
         Poop poopScript = obj.GetComponent<Poop>();
         poopScript.Init(new Vector2(dir.x,dir.y));
 

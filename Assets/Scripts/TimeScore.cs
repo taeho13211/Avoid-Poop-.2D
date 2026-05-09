@@ -15,6 +15,6 @@ public class TimeScore : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        score.text = "SCORE: " + (int)time;
+        score.text = "Time: " + (int)time;
     }
 }

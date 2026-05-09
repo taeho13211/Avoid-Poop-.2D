@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SadPoop : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
     public float damage;
     public float slow;
@@ -11,8 +11,8 @@ public class SadPoop : MonoBehaviour
     public float Speed;
     public void Init(Vector2 dir)
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(dir.x, dir.y)* Speed;
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.linearVelocity = new Vector2(dir.x, dir.y)* Speed;
         Destroy(gameObject,3f);
     }
 

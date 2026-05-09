@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class Poop : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
-    public float Speed;
-    public float damage;
+    public float speed;
+    public float damage = 15f;
     public void Init(Vector2 dir)
     { 
-        rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(dir.x, dir.y)*Speed;
+        Debug.Log("O");
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.linearVelocity = new Vector2(dir.x, dir.y)*speed;
         Destroy(gameObject,3.5f);
     }
 

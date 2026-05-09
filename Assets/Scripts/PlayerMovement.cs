@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed;
+    public float speed;
     public Animator Ani;
 
     private float sloweffect;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
         
-        Vector2 dir = new Vector2(xInput, yInput).normalized *Speed *sloweffect;
+        Vector2 dir =  speed *sloweffect*new Vector2(xInput, yInput).normalized;
 
         if (xInput < 0)
         {

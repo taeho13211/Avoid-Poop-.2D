@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60483ec2497f7bb4291285550335f493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Poop
-  Speed: 7
+  speed: 8
   damage: 15
