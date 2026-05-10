@@ -283,55 +283,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &258136554
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 258136555}
-  - component: {fileID: 258136556}
-  m_Layer: 0
-  m_Name: Shooter1 (Sad)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &258136555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258136554}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1264663378}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &258136556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258136554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee742c84c5411d4ea1b044a27562975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PoopPool
-  poolSize: 5
-  poop: {fileID: 467117502745646483, guid: 393f5c4209c7d07448153da4d3b55b77, type: 3}
-  spawnTimeMax: 0.17
-  spawnTimeMin: 0.6
-  player: {fileID: 1368448729}
 --- !u!1 &361704346
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoopPool
   poolSize: 20
   poop: {fileID: 3754225183916184364, guid: 9b725bfe13608e34dad64ef69a5f1f56, type: 3}
-  spawnTimeMax: 0.17
+  spawnTimeMax: 0.15
   spawnTimeMin: 0.6
   player: {fileID: 1368448729}
 --- !u!1 &427232752
@@ -867,7 +818,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 361704347}
-  - {fileID: 258136555}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1264663379
@@ -882,7 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c11c95c17d969d419c16eb26f79bfd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootersSpin
-  spinSpeed: 500
+  spinSpeed: 750
 --- !u!1 &1364348735
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7941729325452138982}
   - component: {fileID: 7579851736656303424}
   - component: {fileID: 5428826001186639008}
-  - component: {fileID: -2499003062692303863}
+  - component: {fileID: -2029116491151954360}
+  - component: {fileID: -1525162666195236156}
   m_Layer: 0
   m_Name: SadPoop
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.45, y: 0, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -167,7 +168,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.96, y: 2.81}
   m_EdgeRadius: 0
---- !u!114 &-2499003062692303863
+--- !u!114 &-2029116491151954360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,9 +177,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 467117502745646483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98897ca5f87a8c542901772c8c83370c, type: 3}
+  m_Script: {fileID: 11500000, guid: 60483ec2497f7bb4291285550335f493, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::Poop
+  speed: 12
   damage: 10
-  slow: 0.5
-  Speed: 9
+  existTime: 3
+--- !u!114 &-1525162666195236156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467117502745646483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bbf70401ac280419025ccfa24f533e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlowEffect
+  slowEffect: 0.7

@@ -1,21 +1,28 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region
+    [Header("Movement")]
     public float speed;
-    public Animator Ani;
-
-    private float sloweffect;
-    private Rigidbody2D rb;
-
-    private float timer;
-    public float time;
-    private bool settime;
+    private Rigidbody2D _rb;
+    
+    [Header("Animation")]
+    public Animator ani;
+    
+    [Header("Slow")]
+    public float slowTerm;
+    private float _slowTermTimer;
+    private float _slowEffect;
+    private bool _slowOn;
+    
+    #endregion
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sloweffect = 1;
-        settime = false;
+        _rb = GetComponent<Rigidbody2D>();
+        _slowEffect = 1;
+        _slowOn = false;
     }
 
 
@@ -25,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
         
-        Vector2 dir =  speed *sloweffect*new Vector2(xInput, yInput).normalized;
+        Vector2 dir =  speed * _slowEffect * new Vector2(xInput, yInput).normalized;
 
         if (xInput < 0)
         {
@@ -38,25 +45,25 @@ public class PlayerMovement : MonoBehaviour
         
         if (xInput != 0 || yInput != 0)
         {
-            rb. linearVelocity = dir;
-            Ani.SetBool("run", true);
+            _rb.linearVelocity = dir;
+            ani.SetBool("run", true);
         }
         else
         {
-            rb.linearVelocity = new Vector2(0f, 0f);
-            Ani.SetBool("run",false);
+            _rb.linearVelocity = new Vector2(0f, 0f);
+            ani.SetBool("run",false);
         }
         
         
         //slow
-        if (settime)
+        if (_slowOn)
         {
-            timer += Time.deltaTime;
-            if (timer >= time)
+            _slowTermTimer += Time.deltaTime;
+            if (_slowTermTimer >= slowTerm)
             {
-                sloweffect = 1;
-                timer = 0f;
-                settime = false;
+                _slowEffect = 1;
+                _slowTermTimer = 0f;
+                _slowOn = false;
             }
         }
 
@@ -64,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Slow(float slow)
     {
-        sloweffect = slow;  
-        settime = true;
+        _slowEffect = slow;  
+        _slowOn = true;
+        _slowTermTimer = 0f;
     }
 }
