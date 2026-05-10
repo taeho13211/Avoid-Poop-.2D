@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
         _slowEffect = 1;
         _slowOn = false;
     }
-
-
     void Update()
     {
         
