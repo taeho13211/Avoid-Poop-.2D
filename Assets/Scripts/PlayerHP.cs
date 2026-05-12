@@ -3,19 +3,23 @@ using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
-    public Slider slider;
-    public float hp = 100f;
+    #region
+    [Header("HP")]
+    [SerializeField] private Slider slider;
+    private float _currentHp;
+    private float _maxHp = 100f;
+    #endregion
 
-    void Start()
+    void Awake()
     {
-        slider.maxValue = hp;
-        slider.value = hp;
+        _currentHp = _maxHp;
+        slider.value = _currentHp;
     }
     public void TakeDamage(float damage)
     {
-        hp -= damage;
-        slider.value = hp;
-        if (hp <= 0)
+        _currentHp -= damage;
+        slider.value = _currentHp;
+        if (_currentHp <= 0)
         {
             Destroy(gameObject);
         }

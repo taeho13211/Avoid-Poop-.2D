@@ -42,7 +42,6 @@ public class Poop : MonoBehaviour
                     playerSlow.Slow(slowEffect);
                 }
             }
-
             ReturnPoop();
         }
     }
