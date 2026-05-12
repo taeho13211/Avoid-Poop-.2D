@@ -1,29 +1,29 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.Collections;
+using TMPro;
 public class Management : MonoBehaviour
 {
+    public static bool IsgameOver;
     public GameObject player;
-    private bool _isGameOver;
+    [SerializeField] private TextMeshProUGUI gameOver;
 
     void Awake()
     {
-        _isGameOver = false;
+        IsgameOver = false;
+        gameOver.gameObject.SetActive(false);
     }
     void Update()
     {
-        if (player)
+        if (player == null)
         {
-            
-        }
-        else
-        {
+            gameOver.gameObject.SetActive(true);
+            IsgameOver = true;
             Time.timeScale = 0f;
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Time.timeScale = 1f;
-                SceneManager.LoadScene("GameScene");
-            }
+             if (Input.GetKeyDown(KeyCode.R)) 
+             {
+                 Time.timeScale = 1f; 
+                 SceneManager.LoadScene("GameScene");
+             } 
         }
     }
 }

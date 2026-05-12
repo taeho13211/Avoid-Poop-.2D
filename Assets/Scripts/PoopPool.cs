@@ -22,12 +22,9 @@ public class PoopPool : MonoBehaviour
     [Header("StartTime")]
     public float startTime;
     private float _startTimeCount;
-    
-    public static PoopPool Instance;
     #endregion
     void Awake()
     {
-        Instance = this;
         for (int i = 0; i <= poolSize; i++)
         {
             GameObject obj = Instantiate(poop);
@@ -42,6 +39,7 @@ public class PoopPool : MonoBehaviour
     }
     void Update()
     {
+        if (Management.IsgameOver) return;
         _startTimeCount += Time.deltaTime;
         if (_startTimeCount >= startTime)
         {

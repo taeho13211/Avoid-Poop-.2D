@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PlayerHP : MonoBehaviour
 {
     #region
+    public static PlayerHP Instance;
     [Header("HP")]
     [SerializeField] private Slider slider;
     private float _currentHp;
@@ -12,6 +13,15 @@ public class PlayerHP : MonoBehaviour
 
     void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         _currentHp = _maxHp;
         slider.value = _currentHp;
     }

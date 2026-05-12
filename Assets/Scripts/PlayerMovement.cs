@@ -15,8 +15,22 @@ public class PlayerMovement : MonoBehaviour
     private float _slowTermTimer;
     private float _slowEffect;
     private bool _slowOn;
-    
+
+    public static PlayerMovement Instance;
     #endregion
+
+    void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();

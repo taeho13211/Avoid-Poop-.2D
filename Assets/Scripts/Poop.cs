@@ -32,15 +32,10 @@ public class Poop : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerHP playerHp = other.GetComponent<PlayerHP>();
-            if (playerHp != null)
+            PlayerHP.Instance.TakeDamage(damage);
+            if (slowEffect > 0)
             {
-                playerHp.TakeDamage(damage);
-                if (slowEffect > 0)
-                {
-                    PlayerMovement playerSlow = other.GetComponent<PlayerMovement>();
-                    playerSlow.Slow(slowEffect);
-                }
+                PlayerMovement.Instance.Slow(slowEffect);
             }
             ReturnPoop();
         }
