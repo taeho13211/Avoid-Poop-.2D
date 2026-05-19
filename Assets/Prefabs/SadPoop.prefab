@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7941729325452138982}
   - component: {fileID: 7579851736656303424}
   - component: {fileID: 5428826001186639008}
-  - component: {fileID: -2029116491151954360}
+  - component: {fileID: 7631155272223252652}
   m_Layer: 0
   m_Name: SadPoop
   m_TagString: Untagged
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.96, y: 2.81}
   m_EdgeRadius: 0
---- !u!114 &-2029116491151954360
+--- !u!114 &7631155272223252652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,11 +176,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 467117502745646483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60483ec2497f7bb4291285550335f493, type: 3}
+  m_Script: {fileID: 11500000, guid: 429d389ebe7782549b41df00cc87e4dc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Poop
-  speed: 12
-  damage: 10
+  m_EditorClassIdentifier: Assembly-CSharp::SadPoop
+  speed: 10
+  damage: 15
   existTime: 3
   myPool: {fileID: 0}
-  slowEffect: 0.6
+  slowEffect: 0.7

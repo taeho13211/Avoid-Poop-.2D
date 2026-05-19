@@ -10,16 +10,12 @@ public class Poop : MonoBehaviour
     private float _existTimeCount;
     private Rigidbody2D _rb;
     public PoopPool myPool;
-    
-    [Header("SadPoopOnly")]
-    public float slowEffect;
     #endregion
     public void Init(Vector2 dir)
     { 
         _rb = GetComponent<Rigidbody2D>();
         _rb.linearVelocity = new Vector2(dir.x, dir.y)*speed;
     }
-
     void Update()
     {
         _existTimeCount += Time.deltaTime;
@@ -28,15 +24,11 @@ public class Poop : MonoBehaviour
             ReturnPoop();
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             PlayerHP.Instance.TakeDamage(damage);
-            if (slowEffect > 0)
-            {
-                PlayerMovement.Instance.Slow(slowEffect);
-            }
             ReturnPoop();
         }
     }
